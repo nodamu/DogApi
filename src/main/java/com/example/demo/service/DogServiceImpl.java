@@ -1,0 +1,35 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Dog;
+import com.example.demo.repository.DogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class DogServiceImpl implements DogService {
+
+    @Autowired
+    DogRepository dogRepository;
+
+    @Override
+    public List<String> retrieveDogBreed() {
+        return null;
+    }
+
+    @Override
+    public List<Dog> retrieveDogs() {
+        return (List<Dog>) dogRepository.findAll();
+    }
+
+    @Override
+    public String retrieveDogBreedById(Long id) {
+        return (String) dogRepository.findBreedById(id);
+    }
+
+    @Override
+    public List<String> retrieveDogNames() {
+        return (List<String>) dogRepository.findAllName();
+    }
+}
