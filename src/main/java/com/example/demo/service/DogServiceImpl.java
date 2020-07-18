@@ -15,7 +15,7 @@ public class DogServiceImpl implements DogService {
 
     @Override
     public List<String> retrieveDogBreed() {
-        return null;
+        return (List<String>) dogRepository.findAllBreed();
     }
 
     @Override
