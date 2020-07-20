@@ -1,8 +1,8 @@
-package com.example.demo.service;
+package com.nodamu.dogapi.service;
 
-import com.example.demo.entity.Dog;
-import com.example.demo.exception.DogNotFoundException;
-import com.example.demo.repository.DogRepository;
+import com.nodamu.dogapi.entity.Dog;
+import com.nodamu.dogapi.exception.DogNotFoundException;
+import com.nodamu.dogapi.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,10 @@
-package com.example.demo.mutator;
+package com.nodamu.dogapi.mutator;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import com.example.demo.entity.Dog;
-import com.example.demo.exception.BreedNotFoundException;
-import com.example.demo.exception.DogNotFoundException;
-import com.example.demo.exception.DogNotFoundGraphqlException;
-import com.example.demo.repository.DogRepository;
+import com.nodamu.dogapi.entity.Dog;
+import com.nodamu.dogapi.exception.BreedNotFoundException;
+import com.nodamu.dogapi.exception.DogNotFoundGraphqlException;
+import com.nodamu.dogapi.repository.DogRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -18,33 +17,33 @@ public class Mutator implements GraphQLMutationResolver {
         this.dogRepository = dogRepository;
     }
 
-    public Dog updateDogName(Long id, String newName){
+    public Dog updateDogName(Long id, String newName) {
         Optional<Dog> optionalDog = dogRepository.findById(id);
-        if(optionalDog.isPresent()){
+        if (optionalDog.isPresent()) {
             Dog dog = optionalDog.get();
             dog.setName(newName);
             dogRepository.save(dog);
             return dog;
-        }else{
+        } else {
             throw new DogNotFoundGraphqlException("Dog not found", id);
         }
     }
 
-    public Boolean deleteDogBreed(String breed){
+    public Boolean deleteDogBreed(String breed) {
         boolean deleted = false;
         Iterable<Dog> dogs = dogRepository.findAll();
-        for(Dog d: dogs){
-            if(d.getBreed().equals(breed)){
+        for (Dog d : dogs) {
+            if (d.getBreed().equals(breed)) {
                 dogRepository.delete(d);
                 deleted = true;
             }
         }
         // Throw exception if breed doesn't exist
-        if(!deleted){
-            throw  new BreedNotFoundException("Breed not found", breed);
+        if (!deleted) {
+            throw new BreedNotFoundException("Breed not found", breed);
         }
 
-        return  deleted;
+        return deleted;
     }
 }
 

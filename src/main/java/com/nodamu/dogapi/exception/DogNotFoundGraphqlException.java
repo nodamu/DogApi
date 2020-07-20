@@ -1,4 +1,4 @@
-package com.example.demo.exception;
+package com.nodamu.dogapi.exception;
 
 import graphql.ErrorType;
 import graphql.GraphQLError;
@@ -8,14 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DogNotFoundGraphqlException extends RuntimeException implements GraphQLError
-{
+public class DogNotFoundGraphqlException extends RuntimeException implements GraphQLError {
 
     Map<String, Object> extensions = new HashMap<>();
 
     public DogNotFoundGraphqlException(String message, Long invalidDogId) {
         super(message);
-        extensions.put("Invalid dog id",invalidDogId);
+        extensions.put("Invalid dog id", invalidDogId);
     }
 
     @Override

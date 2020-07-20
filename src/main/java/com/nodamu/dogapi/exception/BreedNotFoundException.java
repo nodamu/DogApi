@@ -1,4 +1,4 @@
-package com.example.demo.exception;
+package com.nodamu.dogapi.exception;
 
 import graphql.ErrorType;
 import graphql.GraphQLError;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BreedNotFoundException  extends  RuntimeException implements GraphQLError {
+public class BreedNotFoundException extends RuntimeException implements GraphQLError {
 
     Map<String, Object> extensions = new HashMap<>();
 

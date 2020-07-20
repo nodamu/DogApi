@@ -1,10 +1,9 @@
-package com.example.demo.resolver;
+package com.nodamu.dogapi.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.example.demo.entity.Dog;
-import com.example.demo.exception.DogNotFoundGraphqlException;
-import com.example.demo.repository.DogRepository;
-import com.example.demo.exception.DogNotFoundException;
+import com.nodamu.dogapi.entity.Dog;
+import com.nodamu.dogapi.exception.DogNotFoundGraphqlException;
+import com.nodamu.dogapi.repository.DogRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -17,16 +16,16 @@ public class Query implements GraphQLQueryResolver {
         this.dogRepository = dogRepository;
     }
 
-    public Iterable<Dog> findAllDogs(){
+    public Iterable<Dog> findAllDogs() {
         return dogRepository.findAll();
     }
 
-    public Dog findDogById(Long id){
+    public Dog findDogById(Long id) {
         Optional<Dog> dog = dogRepository.findById(id);
-        if(dog.isPresent()){
+        if (dog.isPresent()) {
             return dog.get();
-        }else{
-            throw new DogNotFoundGraphqlException("Dog not found",id);
+        } else {
+            throw new DogNotFoundGraphqlException("Dog not found", id);
         }
 
     }

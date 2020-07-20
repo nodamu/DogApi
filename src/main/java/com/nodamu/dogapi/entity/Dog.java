@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.nodamu.dogapi.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +21,8 @@ public class Dog {
         this.origin = origin;
     }
 
-    public  Dog(){}
+    public Dog() {
+    }
 
     public Long getId() {
         return id;
