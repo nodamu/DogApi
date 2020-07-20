@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Dog;
+import com.example.demo.exception.DogNotFoundException;
 import com.example.demo.repository.DogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
