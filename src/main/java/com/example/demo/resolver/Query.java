@@ -2,6 +2,7 @@ package com.example.demo.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.example.demo.entity.Dog;
+import com.example.demo.exception.DogNotFoundGraphqlException;
 import com.example.demo.repository.DogRepository;
 import com.example.demo.exception.DogNotFoundException;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,7 @@ public class Query implements GraphQLQueryResolver {
         if(dog.isPresent()){
             return dog.get();
         }else{
-            throw new DogNotFoundException("Dog not found",id);
+            throw new DogNotFoundGraphqlException("Dog not found",id);
         }
 
     }

@@ -11,7 +11,7 @@ type Query{
 }
 
 type Mutation {
-    deleteDogBreed(id:ID!): Boolean!
+    deleteDogBreed(breed: String!): Boolean!
     updateDogName(id:ID!, name: String!): Dog!
 
 }
