@@ -11,6 +11,7 @@ This repository is demo ***spring boot*** and ***graphql*** api service
 * Graphql endpoints
 * Spring Security based basic auth
 * Swagger doc
+* Unit and Integration tests
 
 #### Running the app
 ```shell script
