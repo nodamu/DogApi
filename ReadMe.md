@@ -3,9 +3,7 @@
 
 ![Graphql](https://miro.medium.com/max/480/1*ZvmbMEmtGR15Xj-eb3osXA.png)
 
-[![Coverage Status](https://coveralls.io/repos/github/nodamu/DogApi/badge.svg?branch=master)](https://coveralls.io/github/nodamu/DogApi?branch=master)
-
-[![Build Status](https://travis-ci.org/nodamu/DogApi.svg?branch=master)](https://travis-ci.org/nodamu/DogApi)
+[![Coverage Status](https://coveralls.io/repos/github/nodamu/DogApi/badge.svg?branch=master)](https://coveralls.io/github/nodamu/DogApi?branch=master) [![Build Status](https://travis-ci.org/nodamu/DogApi.svg?branch=master)](https://travis-ci.org/nodamu/DogApi)
 
 ## Dog API
 This repository is demo ***spring boot*** and ***graphql*** api service 
